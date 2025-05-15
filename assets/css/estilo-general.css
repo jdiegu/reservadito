@@ -1,0 +1,511 @@
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  width: 95%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  justify-self: center;
+}
+
+.header-container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav ul li {
+  position: relative;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  min-width: 180px;
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.dropdown-content li {
+  width: 100%;
+}
+
+.dropdown-content li a {
+  display: none;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+  color: #007bff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.dropdown:hover .dropdown-content li a {
+  display: block;
+  border: #007bff 1px solid;
+}
+
+@media (max-width: 768px) {
+
+  header{
+    width: 90%;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .dropdown-content li a{
+    display: none;
+  }
+
+}
+
+/**************************************************/
+
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* ------------------ Estilos Menu ------------------ */
+.menu-list {
+  width: 95%;
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.menu-item img {
+  max-width: 140px;
+  height: 140px;
+
+  margin-right: 15px;
+  border-radius: 50px;
+}
+
+.menu-info {
+  text-align: left;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-confirm,
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.btn-confirm {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-completar,
+.btn-cancelar,
+.btn-entregar {
+  margin: 1rem;
+}
+
+.btn-agregar {
+  width: 100%;
+  font-size: 1em;
+  height: 4rem;
+}
+
+.list-btns {
+  list-style: none;
+}
+
+.list-btns li button {
+  margin: 2px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-item img {
+    width: 140px;
+    height: 140px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .menu-info {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .list-btns {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .list-btns li {
+    width: 100%;
+  }
+
+  .list-btns button {
+    width: 100%;
+  }
+}
+
+/* ------------------ Estilos Perfil ------------------ */
+.settings {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile {
+  margin: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.history {
+  margin: 20px;
+  text-align: left;
+  display: inline-block;
+}
+
+.purchase {
+  display: flex;
+  background: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.purchase img {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+/* ------------------ Estilos Platillo ------------------ */
+main {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.imagen-platillo {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+p.precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+select,
+textarea,
+input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.estrellas {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.estrellas input {
+  display: none;
+}
+
+.estrellas label {
+  font-size: 40px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.estrellas label:hover,
+.estrellas label:hover ~ label,
+.estrellas input:checked ~ label {
+  color: gold;
+}
+
+/* ------------------ Estilos Registro/Login ------------------ */
+.login-container {
+  justify-self: center;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-container label {
+  text-align: left;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.login-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #3f73ed;
+  outline: none;
+}
+
+.login-container button {
+  background-color: #3f73ed;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #295bcc;
+}
+
+.login-container button[type="button"] {
+  background-color: #f0f0f0;
+  color: #3f73ed;
+  border: 1px solid #3f73ed;
+}
+
+.login-container button[type="button"]:hover {
+  background-color: #e2eaff;
+}
+/* ------------------ Estilos Inicio ------------------ */
+.carousel img {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+}
+
+.platillo-del-dia,
+.publicidad {
+  background: #fff;
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.platillo-del-dia img,
+.publicidad img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.ipdd {
+  width: 50px;
+  height: 50px;
+}
